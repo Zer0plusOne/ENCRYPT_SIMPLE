@@ -1,7 +1,7 @@
 # Encriptacion de un texto por una llave
 import sys
 import os
-
+import time
 logo = '''\033[33m                                                                                                                                                                                                                                                                  
                       ██████████                                                            
                   ████░░░░░░░░░░██████                                                    
@@ -38,16 +38,19 @@ def menu():
         text = input("Enter the text to encrypt: ")
         key = int(input("Enter the key: "))
         encrypted_text = encrypt(text, key)
-        print("Encrypted Text:", encrypted_text)
+        print("\033[32mEncrypted Text:", encrypted_text)
+        time.sleep(15)
         menu()
     elif choice == "2":
         text = input("Enter the text to decrypt: ")
         key = int(input("Enter the key: "))
         decrypted_text = decrypt(text, key)
-        print("Decrypted Text:", decrypted_text)
+        print("\033[32mDecrypted Text:", decrypted_text)
+        time.sleep(15)
         menu()
     else:
         print("Invalid choice. Please try again.")
+        time.sleep(5)
         menu()
 
 def encrypt(text, key):
